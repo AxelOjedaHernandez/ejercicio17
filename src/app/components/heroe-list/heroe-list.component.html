@@ -1,0 +1,29 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Poder</th>
+            <th scope="col">Universo</th>
+            <th scope="col">Debilidad</th>
+            <th scope="col">acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (heroe of listadoHeroes; track heroe.id) {
+                <tr>
+                    <td>{{heroe.id}}</td>
+                    <td>{{heroe.nombre}}</td>
+                    <td>{{heroe.poder}}</td>
+                    <td>{{heroe.universo}}</td>
+                    <td>{{heroe.debilidad}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Actualizar</button>
+                        <button type="button" class="btn btn-danger" (click)="EliminarHeroe(heroe.id)">Eliminar</button>
+                    </td>
+                </tr> 
+            }
+        </tbody>
+      </table>
+</div>
